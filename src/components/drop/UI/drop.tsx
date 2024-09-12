@@ -1,7 +1,7 @@
-import {useDropzone} from "react-dropzone"
-
+import { useDropzone } from "react-dropzone"
+import {IoCloud } from "react-icons/io5"
 const DropUpload = () => {
-    const {getRootProps, getInputProps, isDragActive} = useDropzone({
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
         accept: {
             'image/*': [], // Accept all image files
             'application/pdf': [], // Accept PDF files
@@ -16,23 +16,27 @@ const DropUpload = () => {
     });
 
     return (
-        <div
-            {...getRootProps()}
-            style={{
-                border: '2px dashed #cccccc',
-                borderRadius: '4px',
-                padding: '20px',
-                textAlign: 'center',
-                cursor: 'pointer',
-            }}
-        >
-            <input {...getInputProps()} />
-            {isDragActive ? (
-                <p>Drop the files here...</p>
-            ) : (
-                <p>Drag 'n' drop some files here, or click to select files</p>
-            )}
-        </div>
+        <section className="flex w-full flex-col">
+            <div className="flex w-full flex-col rounded-2xl border-solid to-black">
+                <IoCloud/>
+                <div>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+            <div
+                {...getRootProps()}
+                className="border-dotted border-2 border-indigo-600 cursor-pointer rounded w-1/2 h-40"
+            >
+                <input {...getInputProps()} />
+                {isDragActive ? (
+                    <p>Drop the files here...</p>
+                ) : (
+                    <p>Drag 'n' drop some files here, or click to select files</p>
+                )}
+            </div>
+        </section>
+
     );
 
 }

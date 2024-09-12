@@ -5,7 +5,7 @@ import {IoMoon, IoMoonOutline} from "react-icons/io5";
 const Theme = () => {
     const [theme, handleToggleTheme] = useTheme();
     return (
-        <div className={styles.theme} onClick={handleToggleTheme}>
+        <div className={`${styles.theme} cursor-pointer`} onClick={handleToggleTheme}>
             {theme == 'light' ? (
                 <IoMoonOutline size={'14px'}/>
             ) : (<IoMoon size={'14px'}/>)}

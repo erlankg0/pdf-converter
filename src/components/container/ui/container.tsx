@@ -6,7 +6,7 @@ interface IContainerProps {
 
 const Container: FC<IContainerProps> = ({children}) => {
     return (
-        <div className="w-full padding-0 margin-0">
+        <div className="w-[1440px] px-0 py-0 mx-auto my-0">
             {children}
         </div>
     )
