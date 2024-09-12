@@ -1,5 +1,5 @@
 import { useDropzone } from "react-dropzone"
-import {IoCloud } from "react-icons/io5"
+import { IoCloud } from "react-icons/io5"
 const DropUpload = () => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         accept: {
@@ -16,17 +16,24 @@ const DropUpload = () => {
     });
 
     return (
-        <section className="flex w-full flex-col">
+        <section className="flex w-1/2 flex-col justify-center rounded-t-2xl">
             <div className="flex w-full flex-col rounded-2xl border-solid to-black">
-                <IoCloud/>
-                <div>
-                    <p></p>
-                    <p></p>
+                <div className="flex flex-row justify-between">
+
+                    <div className="flex w-[2rem] h-[2rem] border-solid border-2 border-gray-500 justify-center items-center rounded-full px-1 py-1">
+                        <IoCloud />
+                    </div>
+
+                    <div className="flex flex-col gap-x-4">
+                        <p className="font-bold text-black text-lg">Загрузка файла</p>
+                        <p className="font-medium font-mono text-slate-700 text-sm">Выберите файл или перетащите сюда</p>
+                    </div>
                 </div>
+
             </div>
             <div
                 {...getRootProps()}
-                className="border-dotted border-2 border-indigo-600 cursor-pointer rounded w-1/2 h-40"
+                className="border-dotted border-2 border-indigo-600 cursor-pointer rounded  h-40"
             >
                 <input {...getInputProps()} />
                 {isDragActive ? (
